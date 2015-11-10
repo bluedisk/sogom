@@ -1,0 +1,16 @@
+.screen th {
+    width:40px;
+    text-align: center;
+}
+.screen td {
+    width:40px;
+    text-align: center;
+}
+
+.screen .unset {
+    background: #f0f0f0;
+}
+
+.lineselect {
+    background: #FFe0e0;
+}
