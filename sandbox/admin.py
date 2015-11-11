@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
 from django.contrib import admin
+from sandbox.models import Study
 
-# Register your models here.
+
+@admin.register(Study)
+class StudyAdmin(admin.ModelAdmin):
+    pass

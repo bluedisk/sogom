@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <link href="/static/greeting/signin.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="row">
+
+            <form class="form-signin" id="signin">
+                <h2 class="form-signin-heading">새로 가입하거나!</h2>
+                <label for="inputEmail" class="sr-only">이메일 주소</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="이메일 주소" required autofocus>
+                <label for="inputPassword" class="sr-only">비밀번호</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="비밀번호" required>
+                <label for="inputConfirm" class="sr-only">비밀번호 확인</label>
+                <input type="confirm" id="inputConfirm" class="form-control" placeholder="비밀번호 확인" required>
+
+                <button class="btn btn-lg btn-warning btn-block" type="submit">가입하기!</button>
+            </form>
+
+            <form class="form-signin" id="login">
+                <h2 class="form-signin-heading">로그인 하거나!</h2>
+                <label for="inputEmail" class="sr-only">이메일 주소</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="이메일 주소" required>
+                <label for="inputPassword" class="sr-only">비밀번호</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="비밀번호" required>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id="remember-me" value="remember-me"> 아이디 기억하기
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">로그인하기!</button>
+            </form>
+        </div>
+
+    </div> <!-- /container -->
+
+{% endblock %}
+
+{% block script %}
+    <script>
+        $(function(){
+            $('#login').on('click', function(e){
+                if ( $('#remember-me').prop('checked')  ) {
+                    localStorage['remembered-id']=$('#login #inputEmail').val();
+                }
+            });
+
+            if ( typeof localStorage['remembered-id'] != 'undefined' ) {
+                $('#login #inputEmail').val(localStorage['remembered-id']);
+            }
+        });
+    </script>
+{% endblock %}

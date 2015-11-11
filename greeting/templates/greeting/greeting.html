@@ -1,27 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+{% extends 'base.html' %}
 
-    <title>곰곰이와 합께하는 프로그래밍</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
+{% block header %}
     <!-- Custom styles for this template -->
-    <link href="jumbotron-narrow.css" rel="stylesheet">
+    <link href="/static/greeting/css/jumbotron-narrow.css" rel="stylesheet">
+{% endblock %}
 
-  </head>
-
-  <body>
-
+{% block content %}
     <div class="container">
       <div class="header clearfix">
         <nav>
@@ -37,9 +21,10 @@
       <div class="jumbotron">
         <h1>프로그래밍을 해봅시다!</h1>
         <p class="lead">프로그래밍 공부를 위한 여러 문제가 모여 있습니다. 각 문제는 1개의 레벨이며 레벨은 점차 늘려 나갈 예정입니다!</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+        <p><a class="btn btn-lg btn-success" href="{%  url 'sandbox' %}" role="button">시작하기!</a></p>
       </div>
 
+        {%  comment %}
       <div class="row marketing">
         <div class="col-lg-6">
           <h4>1단계: 점찍기</h4>
@@ -53,24 +38,22 @@
         </div>
 
         <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+          <h4>- 준비중 -</h4>
+          <p>아직 준비된 공부가 없네요.</p>
+          <h4>- 준비중 -</h4>
+          <p>아직 준비된 공부가 없네요.</p>
+          <h4>- 준비중 -</h4>
+          <p>아직 준비된 공부가 없네요.</p>
 
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
         </div>
       </div>
 
+        {%  endcomment %}
+
       <footer class="footer">
-        <p>&copy; Company 2014</p>
+        <p>&copy; Eggpang Factory 2015</p>
       </footer>
 
     </div> <!-- /container -->
 
-
-  </body>
-</html>
-
+{% endblock %}

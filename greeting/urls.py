@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """sogom URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -19,4 +20,7 @@ from greeting import views
 
 urlpatterns = [
     url(r'^$', views.greeting, name='greeting'),
+
+    url(r'^login/', views.login, name='login'),
+    url(r'^logout/', views.logout, name='logout'),
 ]
