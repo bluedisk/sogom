@@ -5,8 +5,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.core.urlresolvers import reverse
 
 
-def greeting(request):
-    return render(request, 'greeting/greeting.html')
+def home(request):
+    return render(request, 'home/home.html')
 
 
 def login(request):
@@ -23,9 +23,9 @@ def login(request):
     else:
         form = AuthenticationForm()
 
-    return render(request, 'greeting/login.html', {'form': form})
+    return render(request, 'home/login.html', {'form': form})
 
 
 def logout(request):
     auth.logout(request)
-    return redirect(reverse('greeting'))
+    return redirect(reverse('home'))

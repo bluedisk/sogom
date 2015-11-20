@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from greeting import views
+from home import views
 
 urlpatterns = [
-    url(r'^$', views.greeting, name='greeting'),
+    url(r'^$', views.greeting, name='home'),
 
     url(r'^login/', views.login, name='login'),
     url(r'^logout/', views.logout, name='logout'),

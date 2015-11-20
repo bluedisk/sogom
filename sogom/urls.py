@@ -18,10 +18,13 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 import sandbox.urls
-import greeting.urls
+import home.urls
+import quiz.urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^sandbox/', include(sandbox.urls)),
-    url(r'^', include(greeting.urls)),
+    url(r'^quiz/', include(quiz.urls)),
+    url(r'^', include(home.urls)),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
